@@ -1,9 +1,5 @@
-import { Button } from "./stories/Button"
-import { Header } from "./stories/Header"
-import { Page } from "./stories/Page"
+import Button from './src/Button'
 
 export {
-    Button,
-    Header,
-    Page,
+  Button,
 }

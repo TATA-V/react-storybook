@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import styled, { ThemeProvider } from 'styled-components'
+import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
 import { themes } from './themes'
 
 interface Props {
@@ -34,11 +34,9 @@ function Button({ title, type, onClick } : Props) {
   }, [type])
 
   return (
-    <ThemeProvider theme={themes}>
-      <StyledButton onClick={onClick} $color={color}>
-        {title}
-      </StyledButton>
-    </ThemeProvider>
+    <StyledButton $color={color} onClick={onClick}>
+      {title}
+    </StyledButton>
   )
 }
 
@@ -47,7 +45,6 @@ export default Button
 interface IButton {
   $color: string[]
 }
-
 const StyledButton = styled.button<IButton>`
   background-color: ${({ $color }) => $color[0]};
   color: ${({ $color }) => $color[1]};
@@ -56,14 +53,12 @@ const StyledButton = styled.button<IButton>`
   &:hover {
     opacity: 0.8;
   }
-  
   width: 358px;
   height: 48px;
   font-size: 0.875rem;
   font-weight: 600;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
-  
   flex: 1;
   justify-content: center;
   align-items: center;

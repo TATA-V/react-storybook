@@ -9,11 +9,11 @@ export default {
 export const Primary = {
   args: {
     title: 'button',
-    type: 'lineBlue',
+    mode: 'lineBlue',
     onClick: () => alert('클릭!'),
   },
   argTypes: {
-    type: {
+    mode: {
       options: ['lineBlue', 'lineBlack', 'blue', 'black', 'disabled'],
       control: { type: 'radio' },
     },

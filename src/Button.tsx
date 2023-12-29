@@ -4,15 +4,15 @@ import { themes } from './themes'
 
 interface Props {
   title: string;
-  type: string;
+  mode: string;
   onClick: () => void;
 }
 
-function Button({ title, type, onClick } : Props) {
+function Button({ title, mode, onClick } : Props) {
   const [color, setColor] = useState<string[]>([])
 
   useEffect(() => {
-    switch (type) {
+    switch (mode) {
       case 'lineBlue':
         setColor([themes.colors.white, themes.colors.primary, themes.colors.primary])
         return
@@ -31,7 +31,7 @@ function Button({ title, type, onClick } : Props) {
       default:
         setColor([themes.colors.white, themes.colors.primary, themes.colors.primary])
     }
-  }, [type])
+  }, [mode])
 
   return (
     <StyledButton $color={color} onClick={onClick}>

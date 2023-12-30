@@ -6,6 +6,18 @@ const config = {
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
+    {
+      name: 'storybook-addon-swc',
+      options: {
+        swcLoaderOptions: {
+          jsc: {
+            experimental: {
+              plugin: [['@swc/plugin-styled-components', {}]]
+            },
+          },
+        },
+      },
+    },
   ],
   framework: {
     name: "@storybook/react-vite",
